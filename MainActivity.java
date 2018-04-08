@@ -1,32 +1,28 @@
-package com.example.brysonwilks.roadwork;
+package rt.roadtracker;
 
-import java.util.Date;
-
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class Main4Activity extends AppCompatActivity {
 
-    int ManagerNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main4);
 
-        //write a message to the database
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Storm").child("Road Name");
-        myRef.setValue("Peterson");
+        DatabaseReference myRef = database.getReference("Road").child("Road Name");
+        myRef.setValue("I love HackPSU");
+        myRef.push();
+
+
+
+
+
     }
-    public void managerSet(View view)
-    {
-        Intent managerSet = new Intent(this, Storm.class);
-        startActivity(managerSet);
-    }
+
 }
